@@ -15,14 +15,31 @@
         <div class="model">
             <h3>Задати запитання</h3>
             <p>Залишились питання? Наші експерти дадуть вам відповідь у найближчий робочий час!</p>
-            <textarea name="" id="" placeholder="Ваше запитання"></textarea>
-            <input type="text" placeholder="E-Mail">
-            <button class="btn" id="modelButtonInfo">Відправити</button>
+            <form action="" class="model_form">
+                <label for="question">Ваше запитання</label>
+                <textarea name="" id="question" placeholder="Ваше запитання"></textarea>
+                <label for="email">E-mail</label>
+                <input type="text" placeholder="E-Mail" id="email">
+                <button class="btn" id="modelButtonInfo">Відправити</button>
+            </form>
+        </div>
+    </div>
+    <div class="modalContainer">
+        <div class="modalTel">
+            <h3>Передзвонити нам</h3>
+            <p>Залишились питання? Наші експерти дадуть вам відповідь у найближчий робочий час!</p>
+            <form action="" class="modal_form">
+                <label for="question">Ваше запитання</label>
+                <textarea name="" id="question" placeholder="Ваше запитання"></textarea>
+                <label for="tel">Телефон</label>
+                <input type="tel" placeholder="+38 (000) 00-00-000" id="tel">
+                <button class="btn" id="modalButtonTel">Відправити</button>
+            </form>
         </div>
     </div>
     <header>
         <div class="header">
-            <span class="open"> &#9776;</span>
+            <span class="open">&#9776;</span>
             <h3>Мій Код</h3>
             <p>Повний курс Python за <b><span class="orange">365</span> днів </b></p>
             <div class="column">
@@ -35,7 +52,7 @@
             <div class="column ">
                 <a href="tel:+38(099)0000000"><img src="./img/icon/footer-icon/tel.svg" alt="">
                     +38 (099) 569-88-14</a>
-                <button class="btn_orange btn shadow_button">Передзвонити нам</button>
+                <button class="btn_orange btn shadow_button button_tel">Передзвонити нам</button>
             </div>
         </div>
     </header>
@@ -50,45 +67,42 @@
 
     <main>
         <section class="section1 max-width">
-            <img src="./img/content/header/max.png" alt="" class="fon">
-            <div class="column">
+            <img src="./img/content/header/python.jpg" alt="" class="fon">
+            <div class="column section1_header">
                 <h1>Зробимо <span class="orange">Код</span></h1>
                 <h2>Вашої дитини найкращим.</h2>
                 <p>Повний курс Python: Основи мови, Turtle, ООП, PyGame, Python Pro, Функії</p>
                 <div class="flex_wrap">
-                    <button class="btn_banner">Основи Програмування</button>
-                    <button class="btn_banner">Основи Мови</button>
-                    <button class="btn_banner">Терміни/Функції</button>
-                    <button class="btn_banner">PyGame</button>
-                    <button class="btn_banner">Python Pro</button>
-                    <button class="btn_banner">Диплом</button>
+                    <button class="btn_banner btn">Основи Програмування</button>
+                    <button class="btn_banner btn">Основи Мови</button>
+                    <button class="btn_banner btn">Терміни/Функції</button>
+                    <button class="btn_banner btn">PyGame</button>
+                    <button class="btn_banner btn">Python Pro</button>
+                    <button class="btn_banner btn">Диплом</button>
                 </div>
             </div>
             <form action="">
                 <h3>Замовити курси</h3>
                 <p>Розповідаємо чітко, весело, та зрозуміло усім віковим категоріям</p>
                 <img src="./img/content/header/form.png" alt="">
-                <button class=orderButton>Замовити курси</button>
+                <button class="orderButton btn">Замовити курси</button>
             </form>
         </section>
         <section class="section2" id="services">
             <h2>Розповідаємо чітко, весело, та зрозуміло <br>
                 <span class="small">усім віковим категоріям</span>
             </h2>
-            <div class="flex_wrap section2_wrap">
-                <div class="colum">
+            <div class="flex_wrap section2_wrap"></div>
         </section>
         <section class="section3">
             <h2>Приступимо сьогодні</h2>
             <p>Напишіть нам, щоб отримати запрошення на курс</p>
-            <div class="flex">
-                <img src="./img/content/section2/fon-bg.png" alt="" class="fon">
+            <div class="flex section3_background">
                 <div class="column">
                     <h4>Написання коду,не покажеш картинкою</h4>
                     <p>За кожним кодом стоїть ціла історія, дивись корисні презентації у нас на каналі.</p>
-                    <button class="btn shadow_button">Переглянути</button>
+                    <button class="btn shadow_button button_order">Замовити курси</button>
                 </div>
-                <div class="img"><img src="./img/content/section2/video.png" alt=""></div>
             </div>
         </section>
         <section class="section4">
@@ -133,7 +147,7 @@
             </div>
         </section>
         <section class="section8">
-            <h2>Запрошуємо на роботу тільки <span class="small">найкращих вчителів</span></h2>
+            <h2>Запрошуємо також на інші наші <span class="small">курси</span></h2>
             <div class="slider">
                 <div class="left">
                     <img src="./img/content/slider-section/sl_arrow_left.png" alt="">
@@ -154,7 +168,7 @@
     </main>
     <footer>
         <div class="footer">
-            <h3>Мій Дім</h3>
+            <h3>Мій Код</h3>
             <div class="colum">
                 <b>Види будівництва</b>
                 <ul>

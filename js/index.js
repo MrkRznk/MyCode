@@ -23,6 +23,7 @@ const modelobject = {
     modelContainer: document.getElementsByClassName('modelContainer')[0],
     modelButtonInfo: document.getElementById('modelButtonInfo'),
     orderButton: document.getElementsByClassName('orderButton')[0],
+    buttonOrder: document.querySelector('.button_order'),
     closeModel() {
         this.modelContainer.style.display = 'none';
     },
@@ -33,10 +34,39 @@ const modelobject = {
         this.modelContainer.addEventListener('click', (e) =>
             e.target === e.currentTarget && this.closeModel())
         this.modelButtonInfo.addEventListener('click', () => this.closeModel());
-        this.orderButton.addEventListener('click', () => this.openModel());
+        this.orderButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openModel();
+        });
+        this.buttonOrder.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openModel();
+        });
     }
 }
 modelobject.render()
+
+const modalobjectTel = {
+    modalContainer: document.getElementsByClassName('modalContainer')[0],
+    modalButtonTel: document.getElementById('modalButtonTel'),
+    buttonTel: document.getElementsByClassName('button_tel')[0],
+    closeModel() {
+        this.modalContainer.style.display = 'none';
+    },
+    openModel() {
+        this.modalContainer.style.display = 'block'
+    },
+    render() {
+        this.modalContainer.addEventListener('click', (e) =>
+            e.target === e.currentTarget && this.closeModel())
+        this.modalButtonTel.addEventListener('click', () => this.closeModel());
+        this.buttonTel.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openModel();
+        });
+    }
+}
+modalobjectTel.render()
 
 function dispatch(action, container, data = state) {
     switch (action) {
@@ -54,8 +84,8 @@ function dispatch(action, container, data = state) {
                 <div class="flex">
                     <img src="./img/content/section4/${item.url}" alt="">
                     <div class="column">
-                        <h5>${item.h5}</h5>
-                        <p>${item.p}</p>
+                        <h5>${item.title}</h5>
+                        <p>${item.text}</p>
                     </div>
                 </div>
                 `))
@@ -72,15 +102,14 @@ function dispatch(action, container, data = state) {
                 <li>${item}</li>>
             `))
             break;
-        case "section2_wrap":
-            data.section1.forEach(item =>
+        case "section2":
+            data.section2.forEach(item =>
                 container.insertAdjacentHTML('beforeend', `
                 <div class="colum">
-                <div class="cercle"></div>
-                <h4>${item}</h4>
-                <button class="btn">Детальніше</button>
-                <img src="./img/content/section1/${item.url}" alt="">
-            </div>
+                    <h4>${item.text}</h4>
+                    <img src="./img/content/section1/${item.url}" alt="">
+                    <button class="btn">Детальніше</button>
+                </div>
             `))
         default:
             break;
@@ -99,5 +128,12 @@ const section_6_ol = document.getElementsByClassName('section_6_ol')[0];
 dispatch('section6', section_6_ul, state.section5.ul);
 dispatch('section6', section_6_ol, state.section5.ol);
 const section2_wrap = document.getElementsByClassName('section2_wrap')[0];
-dispatch('section2_wrap', section2_wrap);
+dispatch('section2', section2_wrap);
 
+const btnBanner = document.querySelectorAll('.btn_banner');
+
+btnBanner.forEach(item => {
+    item.addEventListener('click', () => {
+        alert(item.textContent);
+    })
+})
