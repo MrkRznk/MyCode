@@ -68,13 +68,34 @@ const modalobjectTel = {
 }
 modalobjectTel.render()
 
+const modalobjectDetails = {
+    modalContainer: document.getElementsByClassName('modalContainerDetails')[0],
+    modalButtonDet: document.getElementById('modalButtonDet'),
+    buttonDetail: document.getElementsByClassName('btn_with-arrow')[0],
+    closeModel() {
+        this.modalContainer.style.display = 'none';
+    },
+    openModel() {
+        this.modalContainer.style.display = 'block'
+    },
+    render() {
+        this.modalContainer.addEventListener('click', (e) =>
+            e.target === e.currentTarget && this.closeModel())
+        this.modalButtonDet.addEventListener('click', () => this.closeModel());
+        this.buttonDetail.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openModel();
+        });
+    }
+}
+modalobjectDetails.render()
+
 function dispatch(action, container, data = state) {
     switch (action) {
         case 'aside':
             data.aside.forEach(item =>
                 container.insertAdjacentHTML('beforeend', `
-                <li class="menu"><a href="#"><a>${item.title}</a></li>
-
+                <li class="menu"><a class="${item.class}" href="">${item.title}</a></li>
                 `)
             )
             break;
@@ -93,13 +114,27 @@ function dispatch(action, container, data = state) {
         case 'section5':
             data.section4.forEach(item =>
                 container.insertAdjacentHTML('beforeend', `
-                <img src="./img/content/section_img/${item.url}" alt="">
+                <div class="img_container">
+                    <a href="${item.href}" target="_blank">
+                        <img src="./img/content/section_img/${item.url}" alt="">
+                    </a>
+                </div>
             `))
             break;
         case 'section6':
             data.forEach(item =>
                 container.insertAdjacentHTML('beforeend', `
-                <li>${item}</li>>
+                <li>${item}</li>
+            `))
+            break;
+        case 'modalDetails':
+            data.section4.forEach((item, index) =>
+                container.insertAdjacentHTML('beforeend', `
+                <div class="modalLinkContainer">
+                    <a class="modalDetailsLink" href="${item.href}" target="_blank">
+                        Сайт №${index + 1} - ${item.href}
+                    </a>
+                </div>
             `))
             break;
         case "section2":
@@ -129,6 +164,8 @@ dispatch('section6', section_6_ul, state.section5.ul);
 dispatch('section6', section_6_ol, state.section5.ol);
 const section2_wrap = document.getElementsByClassName('section2_wrap')[0];
 dispatch('section2', section2_wrap);
+const modalDetails = document.querySelector('.modalDetails');
+dispatch('modalDetails', modalDetails);
 
 const btnBanner = document.querySelectorAll('.btn_banner');
 
@@ -137,3 +174,114 @@ btnBanner.forEach(item => {
         alert(item.textContent);
     })
 })
+
+const services = document.getElementById('services');
+const works = document.getElementById('works');
+const feedbacks = document.getElementById('feedbacks');
+const contacts = document.getElementById('contacts');
+const curses = document.getElementById('curses');
+const goTop = document.getElementById('gotop');
+const footerLinkFull = document.querySelector('.link_full');
+const footerLinkWorks = document.querySelector('.link_works');
+const footerLinkFeedback = document.querySelector('.link_feedback');
+const footerLinkCurse = document.querySelector('.link_curses');
+
+const menuFull = document.querySelector('.fullMenu');
+const menuWorks = document.querySelector('.worksMenu');
+const menuFeedback = document.querySelector('.feedbackMenu');
+const menuCurses = document.querySelector('.cursesMenu');
+const menuContacts = document.querySelector('.contactsMenu')
+
+footerLinkFull.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = services.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+});
+
+footerLinkWorks.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = works.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+});
+
+footerLinkFeedback.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = feedbacks.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+});
+
+footerLinkCurse.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = curses.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+});
+
+goTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    });
+})
+
+menuFull.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = services.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+    aside.closeAside();
+});
+
+menuWorks.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = works.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+    aside.closeAside();
+});
+
+menuFeedback.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = feedbacks.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+    aside.closeAside();
+});
+
+menuCurses.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = curses.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+    aside.closeAside();
+});
+
+menuContacts.addEventListener('click', (e) => {
+    e.preventDefault();
+    const rect = contacts.getBoundingClientRect();
+    window.scrollTo({
+        top: window.scrollY + rect.top,
+        behavior: 'smooth',
+    });
+    aside.closeAside();
+});

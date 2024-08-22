@@ -37,6 +37,19 @@
             </form>
         </div>
     </div>
+    <div class="modalContainerDetails">
+        <div class="modalTel">
+            <h3>Список робіт наших учнів</h3>
+            <div class="modalDetails"></div>
+            <form action="" class="modal_form">
+                <label for="question">Ваше запитання</label>
+                <textarea name="" id="question" placeholder="Ваше запитання"></textarea>
+                <label for="tel">Телефон</label>
+                <input type="tel" placeholder="+38 (000) 00-00-000" id="tel">
+                <button class="btn" id="modalButtonDet">Відправити</button>
+            </form>
+        </div>
+    </div>
     <header>
         <div class="header">
             <span class="open">&#9776;</span>
@@ -109,12 +122,12 @@
             <h2><span class="small">Дбаємо про Ваше </span>розуміння</h2>
             <div class="flex_wrap section4_wrap">
         </section>
-        <section class="section5 max-width">
+        <section class="section5 max-width" id="works">
             <h2>Подивіться на готові проєкти <span class="small">наших учнів з готовим кодом
                     і теорією.</span></h2>
             <div class="flex_wrap section5_wrap">
             </div>
-            <button class="btn">Детальніше <img src="./img/icon/btn_arr.png" alt=""></button>
+            <button class="btn btn_with-arrow">Детальніше <img class="button_arrow" src="./img/icon/btn_arr.png" alt=""></button>
         </section>
         <section class="section6">
             <h2><span class="small">Готові </span>почати заняття<span class="small"> вже
@@ -123,30 +136,30 @@
             <div class="flex">
                 <div class="blok">
                     <img src="./img/content/person.png" alt="">
-                    <ol class="colum section_6_ol">
+                    <ol class="colum section_6_ol"></ol>
                 </div>
             </div>
             <ul class=section_6_ul>
             </ul>
             </div>
         </section>
-        <section class="section7 max-width">
+        <section class="section7 max-width" id="feedbacks">
             <div class="flex_wrap">
                 <div class="flex">
                     <h2>15</h2>
                     <p>тисяч задоволених учнів</p>
                 </div>
                 <div class="flex">
-                    <h2>9</h2>
-                    <p>тисяч фахівців у штаті</p>
+                    <h2>90</h2>
+                    <p>фахівців у штаті</p>
                 </div>
                 <div class="flex">
-                    <h2>45</h2>
+                    <h2>5</h2>
                     <p>шкіл по всій Україні</p>
                 </div>
             </div>
         </section>
-        <section class="section8">
+        <section class="section8" id="curses">
             <h2>Запрошуємо також на інші наші <span class="small">курси</span></h2>
             <div class="slider">
                 <div class="left">
@@ -167,24 +180,24 @@
         </section>
     </main>
     <footer>
-        <div class="footer">
+        <div class="footer" id="contacts">
             <h3>Мій Код</h3>
             <div class="colum">
-                <b>Види будівництва</b>
+                <a href="" class="link_full">Повний курс Python</a>
                 <ul>
-                    <li><a href="#services">- Основи Мови</a></li>
-                    <li><a href="">- Turtle</a></li>
-                    <li><a href="">- ООП</a></li>
-                    <li><a href="">- PyGame</a></li>
-                    <li><a href="">- Python Pro</a></li>
-                    <li><a href="">- Функції</a></li>
+                    <li><a href="" class="btn_banner">- Основи Програмування</a></li>
+                    <li><a href="" class="btn_banner">- Основи Мови</a></li>
+                    <li><a href="" class="btn_banner">- Терміни/Функції</a></li>
+                    <li><a href="" class="btn_banner">- PyGame</a></li>
+                    <li><a href="" class="btn_banner">- Python Pro</a></li>
+                    <li><a href="" class="btn_banner">- Диплом</a></li>
                 </ul>
             </div>
-            <div class="colum">
-                <b>Роботи учнів</b>
-                <b>Відгуки батьків та учнів</b>
-                <b>Партнери</b>
-            </div>
+            <ul class="colum">
+                <li><a href="" class="link_works">Роботи учнів</a></li>
+                <li><a href="" class="link_feedback">Відгуки батьків</a></li>
+                <li><a href="" class="link_curses">Інші курси</a></li>
+            </ul>
             <div class="colum">
                 <b>Контакти</b>
                 <div class="flex">
